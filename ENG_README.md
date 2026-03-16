@@ -89,6 +89,11 @@ Langages : PHP, JavaScript, HTML, CSS.
 Stockage des données : JSON.
 Outils : Sessions PHP, Hachage sécurisé, Validation de formulaires dynamique.
 
+## Collaborateurs
+<a href="https://github.com/Sparthuus/DeepDive/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Sparthuus/DeepDive" alt="Contributors" />
+</a>
+
 ### Auteurs
 
 Lucien Boyer
