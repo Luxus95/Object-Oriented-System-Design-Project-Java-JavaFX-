@@ -1,41 +1,36 @@
-# C-Wire: High-Performance Electrical Grid Data Engine
+🇫🇷 Version Française
+Ce projet consiste à créer un programme permettant de faire la synthèse de données d’un système de distribution d'électricité. Il utilise un script shell pour filtrer et traiter les données et un programme C pour la partie calcul.
 
-[English Version](#english-version) | [Version Française](#version-française)
+Comment faire pour que le programme compile et qu'il s'exécute ?
+Quand vous êtes dans le github, il faut tout d'abord être dans la branche "main", ensuite cliquer sur "<> Code", et enfin tout télécharger en zip (Download ZIP). Ensuite vous devrez extraire l'entièreté du zip dans un repertoire.
 
----
+Il faut mettre les fichiers d'entrée que vous voulez dans le dossier input (chemin : Projet-Info-2024-2025-main/input).
 
-<a name="english-version"></a>
-## 🇺🇸 English Version
+Lors de l'exécution du programme il faut être dans le bon dossier (faire cd "chemin du fichier télécharger").
 
-### 1. Overview
-This project is a high-performance data processing engine designed to synthesize large-scale electrical distribution datasets. It leverages a hybrid architecture combining **Shell scripting** for efficient data stream filtering and **C** for advanced algorithmic aggregation.
+Commande pour l'éxecution :
 
-### 2. Technical Architecture
-The core engine is built on a custom **AVL Tree (Self-Balancing Binary Search Tree)** implementation.
-
-[Image of AVL tree balancing rotation]
-
-* **Complexity**: Guarantees **$O(\log n)$** time complexity for search, insertion, and aggregation, enabling sub-second processing of datasets exceeding **5,000,000 rows**.
-* **Memory Management**: Engineered with a strict low-level allocation policy to ensure **zero memory leaks** (validated via Valgrind).
-* **Hybrid Pipeline**: A Shell wrapper handles input sanitization and multi-parameter filtering before streaming data to the C binary.
-
-### 3. Installation & Usage
-
-#### Prerequisites
-* GCC Compiler
-* Make
-* GnuPlot (for graphs)
-
-#### Setup
-```bash
-make
-
-
-Execution
 Bash
-bash c-wire.sh <input_file> <station_type> <consumer_type> [power_plant_id]
-Example: bash c-wire.sh input/c-wire_v00.dat hvb comp 1
+bash c-wire.sh input/"le fichier d'entrée" "type de station" "type de consommateur" "identifiant de centrale (optionnel)" "-h (optionnel et pour aide)"
+Exemple : bash c-wire.sh input/c-wire_v00.dat hvb comp 1
 
+Les fichiers résultats seront dans le dossier principal, les fichiers temporaires dans tmp, les graphiques dans graphs et nos essais dans tests. Sur certains ordinateurs la première exécution peut prendre jusqu'à 40 secondes mais les suivantes seront beaucoup plus rapides (entre 0.3 et 7 secondes).
 
-4. Performance
-The system is optimized for algorithmic speed. Initial I/O overhead on massive raw files may take up to 30s, but subsequent processed queries utilize the optimized AVL structure for near-instant results (0.3s to 7s).
+Comment ça fonctionne ?
+La partie shell va prendre en entrée le fichier de données et va compiler make dans le dossier codeC, puis le shell va sélectionner les lignes et colonnes correspondantes à la demande de l'utilisateur. Le C qui recevra ces lignes par entrée directe via le shell va additionner les valeurs de capacité et de consommation pour chaque identifiant.
+
+Pour lv all, le programme va faire un tri supplémentaire qui va garder les 10 premières et 10 dernières stations par leur capacité moins la consommation.
+
+Ce que l'on a utilisé
+Langage : C, Script Shell.
+
+Bibliothèques : stdlib.h, stdio.h, math.h, assert.h.
+
+IA (ChatGPT) : 15%.
+
+Auteurs
+Lucien Boyer
+
+Eliot Durand de Gevigney
+
+Marc-Antoine Abale
