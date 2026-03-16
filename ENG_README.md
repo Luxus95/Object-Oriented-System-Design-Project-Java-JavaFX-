@@ -1,3 +1,57 @@
+# C-Wire: High-Performance Electrical Grid Data Engine
+
+[English Version](#english-version) | [Version Française](#version-française)
+
+---
+
+<a name="english-version"></a>
+# C-Wire: High-Performance Electrical Grid Data Engine
+
+This project focuses on developing a high-performance data processing engine designed to synthesize large-scale electrical distribution datasets. It utilizes a hybrid architecture, leveraging Shell scripting for data stream filtering and C for advanced algorithmic aggregation and computation.
+
+## How to compile and execute the program?
+
+When on GitHub, ensure you are on the "main" branch. Click the "<> Code" button and select "Download ZIP".
+
+Next, extract the entire ZIP archive into a directory of your choice (e.g., Documents or Personal Folder).
+
+Place the input files you wish to process into the input folder. Path: `Projet-Info-2024-2025-main/input`.
+
+To execute the program, navigate to the project directory using the terminal (e.g., `cd path/to/downloaded/folder`).
+
+Example: `cd ~/Documents/Projet-Info-2024-2025-main`. (Ensure you are located at the root of the project).
+
+**Execution Command:**
+`bash c-wire.sh <input_file> <station_type> <consumer_type> [power_plant_id] [-h]`
+
+Example: `bash c-wire.sh input/c-wire_v00.dat hvb comp 1`
+
+Results are generated in the root directory. Temporary files (specifically for `lv_all` cases) are stored in `/tmp`. Visualizations (specifically for `lv_all_minmax` stations) are stored in `/graphs`, and test logs are located in `/tests`.
+
+On some systems, the initial execution on massive raw datasets may take up to 40 seconds due to I/O overhead. Subsequent queries are significantly faster, typically ranging between 0.3 and 7 seconds, thanks to optimized data structures.
+
+A sample file named `c-wire_v00.dat` is provided in the input folder for initial testing. Users can add additional datasets as needed.
+
+## How does it work?
+
+The Shell wrapper sanitizes the input, compiles the C engine via the Makefile in the `codeC` directory, and applies multi-parameter filters to the data stream. These filtered streams are piped into the C binary, which performs high-speed aggregation of capacity and load values for each station ID.
+
+For the **lv all** mode, the engine performs an additional sorting operation to identify the top 10 most loaded and top 10 least loaded nodes, based on the delta between capacity and consumption.
+
+## Technical Stack
+
+* **Programming Languages:** C, Shell Scripting.
+* **Libraries:** stdlib.h, stdio.h, math.h, assert.h.
+* **AI Assistance (ChatGPT):** 15%.
+
+## Authors
+* Lucien Boyer
+* Eliot Durand de Gevigney
+* Marc-Antoine Abale
+
+---
+
+<a name="version-française"></a>
 # Projet-Info-2024-2025
 
 Ce projet consiste à créer un programme permettant de faire la synthèse de données d’un système de distribution d'électricité. Il utilise un script shell pour filtrer et traiter les données et un programme C pour la partie calcul.
@@ -18,11 +72,11 @@ Exemple : cd ~/Documents/Projet-Info-2024-2025-main (peu importe le chemin il fa
 Commande pour l'éxecution : bash c-wire.sh input/"le fichier d'entrée" "type de station" "type de consommateur" "identifiant de centrale (optionnel)" "-h (optionnel et pour aide)"
 Exemple : bash c-wire.sh input/c-wire_v00.dat hvb comp 1
 
-Les fichiers résultats seront dans le dossier principal, les fichiers temporaires (les fichiers temporaires sont uniquement pour les cas de lv_all.csv, lv_all_minmax.csv (avec des centrales aussi si vous le mettez)) dans tmp, les graphiques (les stations lv_all_minmax.csv (avec des centrales aussi si vous le mettez) uniquement) dans graphs et nos essais dans tests.
+Les fichiers résultats seront dans le dossier principal, les fichiers temporaires dans tmp, les graphiques dans graphs et nos essais dans tests.
 
-Sur certains ordinateurs la première exécution du programme par un nouveau fichier d'entrée de beaucoup de données peut prendre jusqu'à 40 secondes mais les suivantes seront beacoup plus rapides (entre 0.3 et 7 secondes).
+Sur certains ordinateurs la première exécution du programme par un nouveau fichier d'entrée de beaucoup de données peut prendre jusqu'à 40 secondes mais les suivantes seront beaucoup plus rapides (entre 0.3 et 7 secondes).
 
-Il y a déjà un premier fichier dans input pour tester le programme et il est nommé "c-wire_v00.dat", on laisse l'utilisateur rajouter d'autres fichier dans le dossier input selon ses besoins.
+Il y a déjà un premier fichier dans input pour tester le programme et il est nommé "c-wire_v00.dat", on laisse l'utilisateur rajouter d'autres fichiers dans le dossier input selon ses besoins.
 
 ## Comment ça fonctionne ?
 
