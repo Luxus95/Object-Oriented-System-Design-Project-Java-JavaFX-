@@ -54,6 +54,8 @@ Jeu Cyber Path réalisé pour le projet d'informatique de fin de Pré-ing1. Le b
 ### Étape 1 : Téléchargement
 Téléchargez l'intégralité des fichiers sources depuis le dépôt GitHub.
 
+# Etape Facultative: Installer make et gcc: 'apt install gcc' 'apt install make':
+
 ### Étape 2 : Compilation
 Sous Linux, ouvrez un terminal dans le répertoire du projet et entrez la commande :
 `make exec`
