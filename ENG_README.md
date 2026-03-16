@@ -1,11 +1,11 @@
-### DeepDive: Full-Stack Data Persistence Platform
+### DeepDive: Full-Stack Data Persistence Platform 🌊
 
 [English Version](#english-version) | [Version Française](#version-française)
 
 ---
 
 <a name="english-version"></a>
-### DeepDive: Full-Stack Data Persistence Platform
+#DeepDive: Full-Stack Data Persistence Platform 🌊
 
 DeepDive is a secure web application designed for managing diving expeditions and reservations. The platform provides a multi-tier environment where users can browse destinations, calculate real-time pricing, and manage their orders through a custom data persistence layer.
 
@@ -57,7 +57,7 @@ Ayman Ghomari
 ---
 
 <a name="version-française"></a>
-### DeepDive
+# DeepDive 🌊
 
 DeepDive est une plateforme web complète dédiée à la gestion de réservations de plongée sous-marine. Elle propose une interface utilisateur dynamique permettant de rechercher des destinations, de calculer des tarifs en temps réel et de gérer un cycle de commande complet.
 
