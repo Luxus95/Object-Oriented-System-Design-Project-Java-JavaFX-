@@ -45,9 +45,9 @@ Security Features: Session management, BCRYPT encryption, Client-side and server
 ### Authors
 
 Lucien Boyer
-Mathieu Ngu
-Ayman A
-Caliste Hebert
+Mathieu Nguyen
+Marc-Antoine Abale
+Ayman Ghomari
 
 ---
 
@@ -92,6 +92,6 @@ Outils : Sessions PHP, Hachage sécurisé, Validation de formulaires dynamique.
 ### Auteurs
 
 Lucien Boyer
-Mathieu Ngu
-Ayman A
-Caliste Hebert
+Mathieu Nguyen
+Marc-Antoine Abale
+Ayman Ghomari
