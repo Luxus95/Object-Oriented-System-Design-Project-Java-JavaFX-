@@ -42,6 +42,11 @@ Programming Languages: PHP, JavaScript, HTML, CSS.
 Data Format: JSON.
 Security Features: Session management, BCRYPT encryption, Client-side and server-side form validation.
 
+## Collaborators
+<a href="https://github.com/Sparthuus/DeepDive/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Sparthuus/DeepDive" alt="Contributors" />
+</a>
+
 ### Authors
 
 Lucien Boyer
