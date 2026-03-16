@@ -1,4 +1,5 @@
-Markdown# C-Wire: High-Performance Electrical Grid Data Engine
+Markdown
+# C-Wire: High-Performance Electrical Grid Data Engine
 
 [English Version](#english-version) | [Version Française](#version-française)
 
@@ -25,4 +26,10 @@ make
 
 # Execution
 bash c-wire.sh <input_file> <station_type> <consumer_type> [power_plant_id]
-Example: bash c-wire.sh input/c-wire_v00.dat hvb comp 14. PerformanceThe system is optimized for algorithmic speed. Initial I/O overhead on massive raw files may take up to 30s, but subsequent processed queries utilize the optimized AVL structure for near-instant results (0.3s to 7s).<a name="version-française"></a>🇫🇷 Version Française1. PrésentationC-Wire est un moteur de synthèse de données pour réseaux de distribution électrique. Le programme traite des ensembles de données massifs pour extraire des statistiques de consommation et de capacité par station.2. Architecture TechniqueLe traitement repose sur une structure d'Arbre AVL (Arbre binaire de recherche auto-équilibré) développée en C.Efficacité : La structure AVL garantit une performance en $O(\log n)$, cruciale pour maintenir la fluidité du traitement sur plus de 5 millions de lignes.Gestion Mémoire : Optimisation rigoureuse des allocations (malloc/free) pour une exécution sans fuite mémoire.Pipeline Hybride : Utilisation du Shell pour le filtrage amont et du C pour les calculs intensifs.3. UtilisationLes fichiers de données doivent être placés dans le dossier /input.Résultats : Générés à la racine du projet.Temporaires : Stockés dans /tmp (notamment pour les tris LV).Graphiques : Visualisations GnuPlot générées dans /graphs.4. AuteursLucien Boyer - Conception algorithmique & Structures de donnéesEliot Durand de Gevigney - Implémentation CMarc-Antoine Abale - Logique Shell & Automatisation (Makefile)
+Example: bash c-wire.sh input/c-wire_v00.dat hvb comp 1
+
+4. Performance
+The system is optimized for algorithmic speed. Initial I/O overhead on massive raw files may take up to 30s, but subsequent processed queries utilize the optimized AVL structure for near-instant results (0.3s to 7s).
+
+
+<a name="version-française"></a>🇫🇷 Version Française1. PrésentationC-Wire est un moteur de synthèse de données pour réseaux de distribution électrique. Le programme traite des ensembles de données massifs pour extraire des statistiques de consommation et de capacité par station.2. Architecture TechniqueLe traitement repose sur une structure d'Arbre AVL (Arbre binaire de recherche auto-équilibré) développée en C.Efficacité : La structure AVL garantit une performance en $O(\log n)$, cruciale pour maintenir la fluidité du traitement sur plus de 5 millions de lignes.Gestion Mémoire : Optimisation rigoureuse des allocations (malloc/free) pour une exécution sans fuite mémoire.Pipeline Hybride : Utilisation du Shell pour le filtrage amont et du C pour les calculs intensifs.3. UtilisationLes fichiers de données doivent être placés dans le dossier /input.Résultats : Générés à la racine du projet.Temporaires : Stockés dans /tmp (notamment pour les tris LV).Graphiques : Visualisations GnuPlot générées dans /graphs.4. AuteursLucien Boyer - Conception algorithmique & Structures de donnéesEliot Durand de Gevigney - Implémentation CMarc-Antoine Abale - Logique Shell & Automatisation (Makefile)
