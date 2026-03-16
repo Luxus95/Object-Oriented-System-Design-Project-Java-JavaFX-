@@ -7,42 +7,41 @@
 <a name="english-version"></a>
 # C-Wire: High-Performance Electrical Grid Data Engine
 
-This project focuses on developing a high-performance data processing engine designed to synthesize large-scale electrical distribution datasets. It utilizes a hybrid architecture, leveraging Shell scripting for data stream filtering and C for advanced algorithmic aggregation and computation.
+This project is a high-performance data processing engine designed to synthesize large-scale electrical distribution datasets. It utilizes a hybrid architecture, combining Shell scripting for data stream filtering and C for advanced algorithmic aggregation.
 
 ## How to compile and execute the program?
 
-When on GitHub, ensure you are on the "main" branch. Click the "<> Code" button and select "Download ZIP".
+To get started, ensure you are on the "main" branch of the repository. Click on "<> Code" and select "Download ZIP".
 
-Next, extract the entire ZIP archive into a directory of your choice (e.g., Documents or Personal Folder).
+Extract the archive into your working directory (e.g., Documents). 
 
-Place the input files you wish to process into the input folder. Path: `Projet-Info-2024-2025-main/input`.
+Place your input datasets in the `/input` folder. Path: `Projet-Info-2024-2025-main/input`.
 
-To execute the program, navigate to the project directory using the terminal (e.g., `cd path/to/downloaded/folder`).
-
-Example: `cd ~/Documents/Projet-Info-2024-2025-main`. (Ensure you are located at the root of the project).
+Open your terminal and navigate to the project root:
+`cd ~/Documents/Projet-Info-2024-2025-main`
 
 **Execution Command:**
 `bash c-wire.sh <input_file> <station_type> <consumer_type> [power_plant_id] [-h]`
 
-Example: `bash c-wire.sh input/c-wire_v00.dat hvb comp 1`
+*Example:* `bash c-wire.sh input/c-wire_v00.dat hvb comp 1`
 
-Results are generated in the root directory. Temporary files (specifically for `lv_all` cases) are stored in `/tmp`. Visualizations (specifically for `lv_all_minmax` stations) are stored in `/graphs`, and test logs are located in `/tests`.
+Results are generated in the root directory. Temporary files are stored in `/tmp`, graphs in `/graphs`, and test outputs in `/tests`.
 
-On some systems, the initial execution on massive raw datasets may take up to 40 seconds due to I/O overhead. Subsequent queries are significantly faster, typically ranging between 0.3 and 7 seconds, thanks to optimized data structures.
-
-A sample file named `c-wire_v00.dat` is provided in the input folder for initial testing. Users can add additional datasets as needed.
+On some systems, the initial processing of massive datasets (>5M rows) may take up to 40 seconds due to I/O overhead. Subsequent runs are significantly faster (0.3s to 7s) thanks to optimized data structures.
 
 ## How does it work?
 
-The Shell wrapper sanitizes the input, compiles the C engine via the Makefile in the `codeC` directory, and applies multi-parameter filters to the data stream. These filtered streams are piped into the C binary, which performs high-speed aggregation of capacity and load values for each station ID.
+The Shell wrapper sanitizes the input and compiles the C engine via the Makefile. It selects the relevant data streams and pipes them into the C binary.
 
-For the **lv all** mode, the engine performs an additional sorting operation to identify the top 10 most loaded and top 10 least loaded nodes, based on the delta between capacity and consumption.
+The core engine is built on a custom **AVL Tree (Self-Balancing Binary Search Tree)** implementation. This ensures **$O(\log n)$** time complexity for aggregation, which is critical for maintaining performance on national-scale datasets.
+
+For **lv all** mode, the engine performs an additional sorting operation to identify the 10 most and least loaded stations based on the delta between capacity and consumption.
 
 ## Technical Stack
 
 * **Programming Languages:** C, Shell Scripting.
-* **Libraries:** stdlib.h, stdio.h, math.h, assert.h.
-* **AI Assistance (ChatGPT):** 15%.
+* **Core Libraries:** stdlib.h, stdio.h, math.h, assert.h.
+* **AI Assistance:** 15% (Initial architectural brainstorming).
 
 ## Authors
 * Lucien Boyer
@@ -50,7 +49,6 @@ For the **lv all** mode, the engine performs an additional sorting operation to 
 * Marc-Antoine Abale
 
 ---
-
 <a name="version-française"></a>
 # Projet-Info-2024-2025
 
