@@ -17,14 +17,18 @@ Ensure you have a C compiler gcc and make installed on your system.
 
 Installer make et gcc: 'apt install gcc' 'apt install make':
 
-### Step 1 Compilation
+### Step 1 Download
+
+Download the complete source files from the GitHub repository.
+
+### Step 2 Compilation
 
 Use the provided Makefile to compile the source files.
 Command: make exec
 
-### Step 2 Running the game
+### Step 3 Execution
 
-Execute the binary.
+Execute the generated binary to start the game.
 Command: ./exec
 
 Note: This project is optimized for Unix based systems to handle terminal rendering correctly.
@@ -89,7 +93,3 @@ Bibliothèques : stdio.h, stdlib.h, string.h, time.h, unistd.h, termios.h.
 Outils : Makefile pour l'automatisation de la compilation.
 
 ### Auteurs
-
-Lucien Boyer
-Axel Atagan
-Adou Humblot
