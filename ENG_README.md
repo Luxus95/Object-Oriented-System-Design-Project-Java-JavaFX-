@@ -1,99 +1,97 @@
-### Cyber Path: Procedural Tactical Engine
+### DeepDive: Full-Stack Data Persistence Platform
 
 [English Version](#english-version) | [Version Française](#version-française)
 
 ---
 
 <a name="english-version"></a>
-### Cyber Path: Procedural Tactical Engine
+### DeepDive: Full-Stack Data Persistence Platform
 
-Cyber Path is a terminal based puzzle game featuring a procedural engine where robots must navigate a grid to reach targets. The core challenge lies in the sliding physics. Robots move in a straight line until they hit an obstacle like a wall or another robot.
+DeepDive is a secure web application designed for managing diving expeditions and reservations. The platform provides a multi-tier environment where users can browse destinations, calculate real-time pricing, and manage their orders through a custom data persistence layer.
 
-### How to compile and execute the game
+### How to install and run the project
 
-Ensure you have a C compiler gcc and make installed on your system.
+Ensure you have a local web server environment like XAMPP, WAMP or MAMP installed.
 
 ### Optional Step
 
-Installer make et gcc: 'apt install gcc' 'apt install make':
+Ensure the PHP development environment is correctly added to your system path: 'apt install php' or similar commands for your distribution:
 
-### Step 1 Download
+### Step 1 Server Configuration
 
-Download the complete source files from the GitHub repository.
+Copy all project files into the root directory of your local server, typically the htdocs or www folder.
 
-### Step 2 Compilation
+### Step 2 Data Persistence Setup
 
-Use the provided Makefile to compile the source files.
-Command: make exec
+Check that the JSON files located in the json directory have the correct read and write permissions to allow the PHP engine to update user data and orders.
 
-### Step 3 Execution
+### Step 3 Application Launch
 
-Execute the generated binary to start the game.
-Command: ./exec
+Start your local server modules and navigate to the project URL in your browser at localhost/DeepDive/index.php.
 
-Note: This project is optimized for Unix based systems to handle terminal rendering correctly.
+### Technical Architecture
 
-### How does it work
+The platform is built on a modular architecture focusing on two key areas.
 
-The engine is built on two main pillars.
-
-1 Procedural Generation gen.c: The game dynamically creates a balanced grid ensuring targets and obstacles are placed to allow solvable but challenging puzzles.
-2 Game Logic main.c: Implements a structured game loop that manages real time player input collision detection and score tracking.
-
-The project utilizes dynamic memory allocation for the grid system ensuring a scalable environment size while maintaining a low memory footprint.
+1 Data Management: The system uses a structured JSON persistence layer to store user profiles and transaction history. Security is enforced through BCRYPT password hashing and server-side session validation.
+2 Dynamic Frontend: JavaScript engines handle real-time price computations and asynchronous profile updates to ensure a seamless user experience.
 
 ### Technical Stack
 
-Programming Language: C.
-Architecture: Modular design with a dedicated header system.
-Tools: GCC, Make, Git.
+Programming Languages: PHP, JavaScript, HTML, CSS.
+Data Format: JSON.
+Security Features: Session management, BCRYPT encryption, Client-side and server-side form validation.
 
 ### Authors
 
 Lucien Boyer
-Axel Atagan
-Adou Humblot
+Mathieu Ngu
+Ayman A
+Caliste Hebert
 
 ---
 
 <a name="version-française"></a>
-### CYBER_PATH
+### DeepDive
 
-Jeu Cyber Path réalisé pour le projet d'informatique de fin de Pré-ing1. Le but est de déplacer des robots pour rejoindre une cible définie aléatoirement en un minimum de mouvements. Les robots glissent ils ne s'arrêtent que lorsqu'ils rencontrent un obstacle.
+DeepDive est une plateforme web complète dédiée à la gestion de réservations de plongée sous-marine. Elle propose une interface utilisateur dynamique permettant de rechercher des destinations, de calculer des tarifs en temps réel et de gérer un cycle de commande complet.
 
-### Comment faire pour que le programme compile et qu'il s'exécute
+### Comment faire pour que le programme s'exécute
+
+Assurez-vous de posséder un environnement de serveur local comme XAMPP, WAMP ou MAMP.
 
 ### Etape Facultative
 
-Installer make et gcc: 'apt install gcc' 'apt install make':
+Vérifiez que votre environnement PHP est bien configuré sur votre machine: 'apt install php' ou une commande équivalente selon votre système:
 
-### Etape 1 Téléchargement
+### Etape 1 Configuration du serveur
 
-Téléchargez l'intégralité des fichiers sources depuis le dépôt GitHub.
+Copiez l'intégralité des dossiers et fichiers du projet dans le répertoire racine de votre serveur local, généralement le dossier htdocs ou www.
 
-### Etape 2 Compilation
+### Etape 2 Initialisation des données
 
-Sous Linux ouvrez un terminal dans le répertoire du projet et entrez la commande: make exec.
+Vérifiez que les fichiers JSON présents dans le dossier json possèdent les droits de lecture et d'écriture pour permettre au moteur PHP de sauvegarder les nouveaux utilisateurs et les commandes.
 
-### Etape 3 Lancement du jeu
+### Etape 3 Lancement de l'application
 
-Lancez l'exécutable généré avec la commande suivante: ./exec.
+Démarrez les modules Apache de votre serveur local puis accédez à l'adresse du projet via votre navigateur à l'url localhost/DeepDive/index.php.
 
 ### Comment ça fonctionne
 
-Le jeu repose sur un moteur procédural développé en C qui génère une grille de jeu différente à chaque partie.
+Le projet repose sur une structure modulaire séparant la logique métier de la présentation.
 
-1 Génération gen.c: Le programme alloue dynamiquement la mémoire pour la grille et place intelligemment les murs les joueurs et les cibles pour garantir la jouabilité.
-2 Logique de Jeu main.c: Gère les tours le calcul des points et les collisions. Un mouvement n'est comptabilisé que si le robot parcourt une distance en ligne droite jusqu'à un obstacle.
+1 Gestion des données: L'application utilise des fichiers JSON pour la persistance des informations. Les mots de passe sont sécurisés via un hachage BCRYPT et les accès sont contrôlés par un système de sessions robuste.
+2 Interface dynamique: Des scripts JavaScript gèrent le calcul des prix selon les options choisies et permettent la modification du profil utilisateur sans rechargement de page.
 
 ### Ce que l'on a utilisé
 
-Langage : C.
-Bibliothèques : stdio.h, stdlib.h, string.h, time.h, unistd.h, termios.h.
-Outils : Makefile pour l'automatisation de la compilation.
+Langages : PHP, JavaScript, HTML, CSS.
+Stockage des données : JSON.
+Outils : Sessions PHP, Hachage sécurisé, Validation de formulaires dynamique.
 
 ### Auteurs
 
 Lucien Boyer
-Axel Atagan
-Adou Humblot
+Mathieu Ngu
+Ayman A
+Caliste Hebert
