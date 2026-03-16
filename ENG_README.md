@@ -93,3 +93,7 @@ Bibliothèques : stdio.h, stdlib.h, string.h, time.h, unistd.h, termios.h.
 Outils : Makefile pour l'automatisation de la compilation.
 
 ### Auteurs
+
+Lucien Boyer
+Axel Atagan
+Adou Humblot
