@@ -45,7 +45,7 @@ java -cp src Main
 │   └── Main.java      # Test Suite & Entry Point
 ├── .gitignore         # Version control exclusion
 └── README.md          # Documentation
-````
+```
 ### Technical Concepts Implemented
 Encapsulation & Data Integrity: Use of private final attributes and centralized logic (setScore) to ensure scores never drop below zero (DRY principle).
 
