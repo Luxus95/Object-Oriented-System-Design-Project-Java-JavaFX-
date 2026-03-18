@@ -1,107 +1,109 @@
-# Cyber Path: Procedural Tactical Engine
+# Java Player Management System
 
 [English Version](#english-version) | [Version Française](#version-française)
 
 ---
 
 <a name="english-version"></a>
-# Cyber Path: Procedural Tactical Engine
+# Java Player Management System
 
-Cyber Path is a terminal based puzzle game featuring a procedural engine where robots must navigate a grid to reach targets. The core challenge lies in the sliding physics. Robots move in a straight line until they hit an obstacle like a wall or another robot.
+This project implements a robust player management system in Java. It is designed to demonstrate core and advanced **Object-Oriented Programming (OOP)** principles, such as encapsulation, static members, and constructor chaining.
 
-### ### How to compile and execute the game
+### ### How to compile and execute the project
 
-Ensure you have a C compiler gcc and make installed on your system.
+Ensure you have a Java Development Kit (JDK) installed on your system.
 
-### ### Optional Step
-
-Installer make et gcc:
+### ### Step 1: Compilation
+Open a terminal in the project root and compile the source files located in the `src` folder:
 bash
-sudo apt install gcc
-sudo apt install make
+javac src/*.java
 
-### Step 1 Download
-Download the complete source files from the GitHub repository.
-
-### Step 2 Compilation
-Use the provided Makefile to compile the source files.
-Command:
+### Step 2: Execution
+Run the application by pointing to the classpath:
 
 Bash
-make exec
-### Step 3 Execution
-Execute the generated binary to start the game.
-Command:
+java -cp src Main
 
-Bash
-./exec
-Note: This project is optimized for Unix based systems to handle terminal rendering correctly.
+### Project Structure
+Plaintext
+/MonProjetJoueur
+├── src/
+│   ├── Joueur.java    # Core Logic & Player Model
+│   └── Main.java      # Test Suite & Entry Point
+├── .gitignore         # Version control exclusion
+└── README.md          # Documentation
 
-### How does it work
-The engine is built on two main pillars.
+### Technical Concepts Implemented
+Encapsulation & Data Integrity: Use of private final attributes and centralized logic (setScore) to ensure scores never drop below zero.
 
-Procedural Generation (gen.c): The game dynamically creates a balanced grid ensuring targets and obstacles are placed to allow solvable but challenging puzzles.
+Static Context: Implementation of a global player counter using static variables to track instances across the application.
 
-Game Logic (main.c): Implements a structured game loop that manages real time player input collision detection and score tracking.
+Constructor Chaining: Optimized object initialization using this() to handle default naming conventions.
 
-The project utilizes dynamic memory allocation for the grid system ensuring a scalable environment size while maintaining a low memory footprint.
+Method Overriding:
+
+toString(): Custom string representation with plural/singular logic for points.
+
+equals(): Semantic comparison of objects based on name (case-insensitive).
 
 ### Technical Stack
-Programming Language: C.
+Programming Language: Java.
 
-Architecture: Modular design with a dedicated header system.
+Paradigm: Object-Oriented Programming.
 
-Tools: GCC, Make, Git.
+Tools: Git, JDK, Terminal.
 
 ### Authors
 Lucien Boyer
 
-Axel Atagan
-
-Adou Humblot
-
 <a name="version-française"></a>
 
-CYBER_PATH
-Jeu Cyber Path réalisé pour le projet d'informatique de fin de Pré-ing1. Le but est de déplacer des robots pour rejoindre une cible définie aléatoirement en un minimum de mouvements. Les robots glissent ils ne s'arrêtent que lorsqu'ils rencontrent un obstacle.
+Système de Gestion de Joueurs en Java
+Ce projet implémente un système de gestion de joueurs en Java, conçu pour illustrer les principes fondamentaux et avancés de la Programmation Orientée Objet (POO), tels que l'encapsulation, les membres statiques et le chaînage de constructeurs.
 
-### Comment faire pour que le programme compile et qu'il s'exécute
-### Etape Facultative
-Installer make et gcc:
+### Comment compiler et exécuter le projet
+Assurez-vous d'avoir un JDK (Java Development Kit) installé sur votre machine.
 
-Bash
-sudo apt install gcc
-sudo apt install make
-### Etape 1 Téléchargement
-Téléchargez l'intégralité des fichiers sources depuis le dépôt GitHub.
-
-### Etape 2 Compilation
-Sous Linux ouvrez un terminal dans le répertoire du projet et entrez la commande:
+### Étape 1 : Compilation
+Ouvrez un terminal à la racine du projet et compilez les fichiers sources :
 
 Bash
-make exec
-### Etape 3 Lancement du jeu
-Lancez l'exécutable généré avec la commande suivante:
+javac src/*.java
+
+### Étape 2 : Exécution
+Lancez le programme en spécifiant le chemin des classes :
 
 Bash
-./exec
-### Comment ça fonctionne
-Le jeu repose sur un moteur procédural développé en C qui génère une grille de jeu différente à chaque partie.
+java -cp src Main
 
-Génération (gen.c): Le programme alloue dynamiquement la mémoire pour la grille et place intelligemment les murs les joueurs et les cibles pour garantir la jouabilité.
+### Structure du Projet
+Plaintext
+/MonProjetJoueur
+├── src/
+│   ├── Joueur.java    # Logique métier et modèle
+│   └── Main.java      # Suite de tests et point d'entrée
+├── .gitignore         # Exclusion pour le versioning
+└── README.md          # Documentation
 
-Logique de Jeu (main.c): Gère les tours le calcul des points et les collisions. Un mouvement n'est comptabilisé que si le robot parcourt une distance en ligne droite jusqu'à un obstacle.
+### Concepts Techniques Implémentés
+Encapsulation et Intégrité : Utilisation d'attributs private final et d'une méthode setScore privée pour garantir que le score reste positif (principe DRY).
 
-### Ce que l'on a utilisé
-Langage : C.
+Contexte Statique : Suivi automatique du nombre total de joueurs via une variable de classe static.
 
-Bibliothèques : stdio.h, stdlib.h, string.h, time.h, unistd.h, termios.h.
+Chaînage de Constructeurs : Appel de constructeurs via this() pour éviter la duplication de code lors de la création de joueurs sans nom.
 
-Outils : Makefile pour l'automatisation de la compilation.
+Redéfinition de Méthodes (Overriding) :
+
+toString() : Représentation textuelle personnalisée avec gestion intelligente du singulier/pluriel pour les points.
+
+equals() : Comparaison sémantique basée sur le nom, insensible à la casse.
+
+### Technologies utilisées
+Langage : Java.
+
+Paradigme : Programmation Orientée Objet.
+
+Outils : Git, JDK, Terminal.
 
 ### Auteurs
 Lucien Boyer
-
-Axel Atagan
-
-Adou Humblot
