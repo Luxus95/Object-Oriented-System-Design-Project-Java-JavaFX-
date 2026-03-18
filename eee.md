@@ -45,6 +45,7 @@ Plaintext
 │   └── Main.java      # Test Suite & Entry Point
 ├── .gitignore         # Version control exclusion
 └── README.md          # Documentation
+
 ### Technical Concepts Implemented
 Encapsulation & Data Integrity: Use of private final attributes and centralized logic (setScore) to ensure scores never drop below zero (DRY principle).
 
@@ -70,7 +71,7 @@ Lucien Boyer
 
 <a name="version-française"></a>
 
-#Système de Gestion de Joueurs en Java
+# Système de Gestion de Joueurs en Java
 Ce projet implémente un système de gestion de joueurs en Java, conçu pour illustrer les principes fondamentaux et avancés de la Programmation Orientée Objet (POO), tels que l'encapsulation, les membres statiques et le chaînage de constructeurs.
 
 ### Prérequis (Installation)
