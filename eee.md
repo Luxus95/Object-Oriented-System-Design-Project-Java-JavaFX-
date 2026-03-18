@@ -1,4 +1,4 @@
-# Java Player Management System
+# Object-Oriented-System-Design-Project-Java-JavaFX-
 
 [English Version](#english-version) | [Version Française](#version-française)
 
@@ -39,7 +39,7 @@ java -cp src Main
 
 ### Project Structure
 ```text
-/MonProjetJoueur
+/Object-Oriented-System-Design-Project-Java-JavaFX-
 ├── src/
 │   ├── Joueur.java    # Core Logic & Player Model
 │   └── Main.java      # Test Suite & Entry Point
@@ -71,7 +71,7 @@ Lucien Boyer
 
 <a name="version-française"></a>
 
-# Système de Gestion de Joueurs en Java
+# Object-Oriented-System-Design-Project-Java-JavaFX-
 Ce projet implémente un système de gestion de joueurs en Java, conçu pour illustrer les principes fondamentaux et avancés de la Programmation Orientée Objet (POO), tels que l'encapsulation, les membres statiques et le chaînage de constructeurs.
 
 ### Prérequis (Installation)
@@ -100,7 +100,7 @@ Bash
 java -cp src Main
 ### Structure du Projet
 ```text
-/MonProjetJoueur
+/Object-Oriented-System-Design-Project-Java-JavaFX-
 ├── src/
 │   ├── Joueur.java    # Logique métier et modèle
 │   └── Main.java      # Suite de tests et point d'entrée
