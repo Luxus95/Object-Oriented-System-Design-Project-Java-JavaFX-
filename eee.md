@@ -38,7 +38,6 @@ Bash
 java -cp src Main
 
 ### Project Structure
-Plaintext
 /MonProjetJoueur
 ├── src/
 │   ├── Joueur.java    # Core Logic & Player Model
@@ -99,7 +98,6 @@ Lancez le programme en spécifiant le chemin des classes :
 Bash
 java -cp src Main
 ### Structure du Projet
-Plaintext
 /MonProjetJoueur
 ├── src/
 │   ├── Joueur.java    # Logique métier et modèle
