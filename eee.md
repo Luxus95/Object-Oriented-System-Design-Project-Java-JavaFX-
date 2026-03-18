@@ -45,7 +45,7 @@ java -cp src Main
 │   └── Main.java      # Test Suite & Entry Point
 ├── .gitignore         # Version control exclusion
 └── README.md          # Documentation
-
+````
 ### Technical Concepts Implemented
 Encapsulation & Data Integrity: Use of private final attributes and centralized logic (setScore) to ensure scores never drop below zero (DRY principle).
 
@@ -99,12 +99,14 @@ Lancez le programme en spécifiant le chemin des classes :
 Bash
 java -cp src Main
 ### Structure du Projet
+```text
 /MonProjetJoueur
 ├── src/
 │   ├── Joueur.java    # Logique métier et modèle
 │   └── Main.java      # Suite de tests et point d'entrée
 ├── .gitignore         # Exclusion pour le versioning
 └── README.md          # Documentation
+```
 ### Concepts Techniques Implémentés
 Encapsulation et Intégrité : Utilisation d'attributs private final et d'une méthode setScore privée pour garantir que le score reste positif (principe DRY).
 
