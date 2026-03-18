@@ -38,6 +38,7 @@ Bash
 java -cp src Main
 
 ### Project Structure
+```text
 /MonProjetJoueur
 ├── src/
 │   ├── Joueur.java    # Core Logic & Player Model
